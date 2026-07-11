@@ -1,0 +1,13 @@
+{
+  "name": "meadowbrook-media",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "templates/*",
+    "clients/*"
+  ],
+  "scripts": {
+    "new-client": "node scripts/new-client.mjs"
+  }
+}
