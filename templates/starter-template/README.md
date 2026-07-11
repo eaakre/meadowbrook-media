@@ -23,6 +23,14 @@ npm run dev --workspace=acme-co
 - Schema types are in `src/sanity/schemaTypes/`.
 - Client/query helpers are in `src/sanity/client.ts`.
 
+### Pages & sections
+
+Content is modeled as `page` documents (`title`, `slug`, `seo` with OG image, and a `pageBuilder` array). Each `pageBuilder` entry is a typed module — `heroModule`, `ctaModule`, `faqModule`, `testimonialsModule`, `logoCloudModule`, `cardGridModule`, `richTextModule` (see `src/sanity/schemaTypes/modules/`).
+
+`src/components/PageBuilder.tsx` maps each module to its `ui-core` component (`Hero`, `CTASection`, `FAQAccordion`, etc.), resolving images via `urlFor()` along the way. The homepage renders the `page` with slug `index`; every other page is served from `(site)/[slug]`.
+
+To add a new section type: add a module schema, register it in `page.ts`'s module list and `schemaTypes/index.ts`, add a case to `PageBuilder.tsx`, and (if the UI doesn't exist yet) a component in `packages/ui-core`.
+
 ## Ejecting this client to its own repo
 
 1. Copy `clients/<name>` out to a new folder.
