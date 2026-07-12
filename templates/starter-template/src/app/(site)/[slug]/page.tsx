@@ -9,8 +9,13 @@ import { pageSlugsQuery } from "@/sanity/queries";
 export const revalidate = 60;
 
 export async function generateStaticParams() {
-  const slugs = await client.fetch<string[]>(pageSlugsQuery);
-  return slugs.filter((slug) => slug !== "index").map((slug) => ({ slug }));
+  try {
+    const slugs = await client.fetch<string[]>(pageSlugsQuery);
+    return slugs.filter((slug) => slug !== "index").map((slug) => ({ slug }));
+  } catch (error) {
+    console.error("[sanity] Failed to fetch page slugs:", error);
+    return [];
+  }
 }
 
 export async function generateMetadata({

@@ -6,7 +6,12 @@ import { pageBySlugQuery } from "./queries";
 import type { PageData } from "./types";
 
 export async function getPageBySlug(slug: string) {
-  return client.fetch<PageData | null>(pageBySlugQuery, { slug });
+  try {
+    return await client.fetch<PageData | null>(pageBySlugQuery, { slug });
+  } catch (error) {
+    console.error(`[sanity] Failed to fetch page "${slug}":`, error);
+    return null;
+  }
 }
 
 export function metadataForPage(page: PageData | null): Metadata {
