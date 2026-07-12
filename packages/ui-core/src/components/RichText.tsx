@@ -25,7 +25,7 @@ const defaultComponents: PortableTextComponents = {
       <p className="mt-4 leading-relaxed first:mt-0">{children}</p>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="mt-4 border-l-2 border-neutral-300 pl-4 italic text-neutral-600">
+      <blockquote className="mt-4 border-l-2 border-border pl-4 italic text-muted-foreground">
         {children}
       </blockquote>
     ),

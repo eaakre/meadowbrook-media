@@ -8,9 +8,9 @@ export interface SectionProps extends HTMLAttributes<HTMLElement> {
 }
 
 const toneClasses: Record<SectionTone, string> = {
-  default: "bg-white text-neutral-900",
-  muted: "bg-neutral-50 text-neutral-900",
-  inverted: "bg-neutral-900 text-white",
+  default: "bg-background text-foreground",
+  muted: "bg-muted text-foreground",
+  inverted: "bg-foreground text-background",
 };
 
 export function Section({

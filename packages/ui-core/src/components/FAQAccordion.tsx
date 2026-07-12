@@ -24,7 +24,7 @@ export function FAQAccordion({ heading, items }: FAQAccordionProps) {
           {heading}
         </h2>
       ) : null}
-      <div className="mt-8 divide-y divide-neutral-200 border-y border-neutral-200">
+      <div className="mt-8 divide-y divide-border border-y border-border">
         {items.map((item, index) => {
           const isOpen = openIndex === index;
           return (
@@ -47,7 +47,7 @@ export function FAQAccordion({ heading, items }: FAQAccordionProps) {
                 </span>
               </button>
               {isOpen ? (
-                <p className="pb-4 text-neutral-600">{item.answer}</p>
+                <p className="pb-4 text-muted-foreground">{item.answer}</p>
               ) : null}
             </div>
           );

@@ -15,7 +15,7 @@ export function CTASection({ heading, body, cta }: CTASectionProps) {
         <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
           {heading}
         </h2>
-        {body ? <p className="max-w-xl text-neutral-300">{body}</p> : null}
+        {body ? <p className="max-w-xl text-background/70">{body}</p> : null}
         <LinkButton href={cta.href} variant="secondary">
           {cta.label}
         </LinkButton>

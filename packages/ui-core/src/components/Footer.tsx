@@ -12,7 +12,7 @@ export interface FooterProps {
 
 export function Footer({ columns = [], copyright }: FooterProps) {
   return (
-    <footer className="border-t border-neutral-200">
+    <footer className="border-t border-border">
       <Container className="py-12">
         {columns.length > 0 ? (
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
@@ -24,7 +24,7 @@ export function Footer({ columns = [], copyright }: FooterProps) {
                     <li key={link.href}>
                       <a
                         href={link.href}
-                        className="text-sm text-neutral-600 hover:text-neutral-900"
+                        className="text-sm text-muted-foreground hover:text-foreground"
                       >
                         {link.label}
                       </a>
@@ -35,7 +35,7 @@ export function Footer({ columns = [], copyright }: FooterProps) {
             ))}
           </div>
         ) : null}
-        <p className="mt-12 text-sm text-neutral-500">{copyright}</p>
+        <p className="mt-12 text-sm text-muted-foreground">{copyright}</p>
       </Container>
     </footer>
   );

@@ -41,7 +41,7 @@ export function ContactForm({ onSubmit, submitLabel = "Send message" }: ContactF
   }
 
   if (status === "success") {
-    return <p className="text-neutral-700">Thanks — we&rsquo;ll be in touch soon.</p>;
+    return <p className="text-foreground">Thanks — we&rsquo;ll be in touch soon.</p>;
   }
 
   return (
@@ -53,7 +53,7 @@ export function ContactForm({ onSubmit, submitLabel = "Send message" }: ContactF
         {status === "submitting" ? "Sending…" : submitLabel}
       </Button>
       {status === "error" ? (
-        <p className="text-sm text-red-600">
+        <p className="text-sm text-destructive">
           Something went wrong. Please try again.
         </p>
       ) : null}

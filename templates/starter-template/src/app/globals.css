@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+  Design tokens. Override these per client to restyle every ui-core
+  component without touching component code. Values are HSL channels
+  (no hsl(...) wrapper) so Tailwind can apply opacity modifiers, e.g.
+  bg-primary/90.
+*/
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 9%;
+
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 9%;
+
+  --muted: 0 0% 98%;
+  --muted-foreground: 0 0% 45%;
+
+  --border: 0 0% 90%;
+
+  --destructive: 0 84% 60%;
+
+  --radius: 0.375rem;
+}
+
+body {
+  @apply bg-background text-foreground;
+}

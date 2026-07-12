@@ -36,14 +36,14 @@ export function Hero({
     >
       <div>
         {eyebrow ? (
-          <p className="text-sm font-medium uppercase tracking-wide text-neutral-500">
+          <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
             {eyebrow}
           </p>
         ) : null}
         <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
           {heading}
         </h1>
-        {body ? <p className="mt-4 text-lg text-neutral-600">{body}</p> : null}
+        {body ? <p className="mt-4 text-lg text-muted-foreground">{body}</p> : null}
         {primaryCta || secondaryCta ? (
           <div className="mt-8 flex flex-wrap gap-4">
             {primaryCta ? (

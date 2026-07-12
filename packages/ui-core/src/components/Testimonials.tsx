@@ -26,9 +26,9 @@ export function Testimonials({ heading, items }: TestimonialsProps) {
         {items.map((item) => (
           <figure
             key={item.name}
-            className="rounded-lg border border-neutral-200 p-6"
+            className="rounded-lg border border-border p-6"
           >
-            <blockquote className="text-neutral-700">
+            <blockquote className="text-foreground">
               &ldquo;{item.quote}&rdquo;
             </blockquote>
             <figcaption className="mt-4 flex items-center gap-3">
@@ -44,7 +44,7 @@ export function Testimonials({ heading, items }: TestimonialsProps) {
               <div>
                 <div className="text-sm font-medium">{item.name}</div>
                 {item.role ? (
-                  <div className="text-sm text-neutral-500">{item.role}</div>
+                  <div className="text-sm text-muted-foreground">{item.role}</div>
                 ) : null}
               </div>
             </figcaption>

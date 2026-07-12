@@ -4,9 +4,9 @@ import { cn } from "../lib/cn";
 export type ButtonVariant = "primary" | "secondary" | "ghost";
 
 export const buttonVariantClasses: Record<ButtonVariant, string> = {
-  primary: "bg-neutral-900 text-white hover:bg-neutral-700",
-  secondary: "bg-neutral-100 text-neutral-900 hover:bg-neutral-200",
-  ghost: "bg-transparent text-neutral-900 hover:bg-neutral-100",
+  primary: "bg-primary text-primary-foreground hover:bg-primary/90",
+  secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+  ghost: "bg-transparent text-foreground hover:bg-muted",
 };
 
 export const buttonBaseClasses =

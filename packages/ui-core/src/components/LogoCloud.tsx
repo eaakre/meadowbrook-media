@@ -16,7 +16,7 @@ export function LogoCloud({ heading, logos }: LogoCloudProps) {
   return (
     <Container>
       {heading ? (
-        <p className="text-center text-sm font-medium uppercase tracking-wide text-neutral-500">
+        <p className="text-center text-sm font-medium uppercase tracking-wide text-muted-foreground">
           {heading}
         </p>
       ) : null}

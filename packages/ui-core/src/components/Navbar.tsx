@@ -19,7 +19,7 @@ export function Navbar({ logo, links, cta }: NavbarProps) {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-neutral-200">
+    <header className="border-b border-border">
       <Container className="flex items-center justify-between py-4">
         <a href="/" className="font-semibold">
           {logo}
@@ -30,7 +30,7 @@ export function Navbar({ logo, links, cta }: NavbarProps) {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-neutral-700 hover:text-neutral-900"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground"
             >
               {link.label}
             </a>
@@ -38,7 +38,7 @@ export function Navbar({ logo, links, cta }: NavbarProps) {
           {cta ? (
             <a
               href={cta.href}
-              className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-700"
+              className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
               {cta.label}
             </a>
@@ -52,15 +52,15 @@ export function Navbar({ logo, links, cta }: NavbarProps) {
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="block h-0.5 w-6 bg-neutral-900" />
-          <span className="mt-1.5 block h-0.5 w-6 bg-neutral-900" />
-          <span className="mt-1.5 block h-0.5 w-6 bg-neutral-900" />
+          <span className="block h-0.5 w-6 bg-foreground" />
+          <span className="mt-1.5 block h-0.5 w-6 bg-foreground" />
+          <span className="mt-1.5 block h-0.5 w-6 bg-foreground" />
         </button>
       </Container>
 
       <div
         className={cn(
-          "border-t border-neutral-200 md:hidden",
+          "border-t border-border md:hidden",
           open ? "block" : "hidden"
         )}
       >
