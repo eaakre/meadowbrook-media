@@ -1,3 +1,4 @@
+import type { HeroLayout } from "@meadowbrook/ui-core";
 import type { ImageHotspot, ImageCrop } from "sanity";
 
 export interface SanityImageValue {
@@ -15,6 +16,7 @@ export interface LinkValue {
 export interface HeroModule {
   _type: "heroModule";
   _key: string;
+  layout?: HeroLayout;
   eyebrow?: string;
   heading: string;
   body?: string;

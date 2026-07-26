@@ -28,9 +28,11 @@ export function PageBuilder({ modules }: { modules?: PageModule[] }) {
 
 function PageModuleRenderer({ module }: { module: PageModule }) {
   switch (module._type) {
-    case "heroModule":
+    case "heroModule": {
+      const layout = module.layout ?? "fullBleed";
       return (
         <Hero
+          layout={layout}
           eyebrow={module.eyebrow}
           heading={module.heading}
           body={module.body}
@@ -38,14 +40,23 @@ function PageModuleRenderer({ module }: { module: PageModule }) {
           secondaryCta={module.secondaryCta}
           media={
             module.image ? (
-              <SanityImage
-                src={urlFor(module.image).width(1200).height(900).url()}
-                alt={module.heading}
-              />
+              layout === "fullBleed" ? (
+                <SanityImage
+                  src={urlFor(module.image).width(1920).height(1080).url()}
+                  alt={module.heading}
+                  fill
+                />
+              ) : (
+                <SanityImage
+                  src={urlFor(module.image).width(1200).height(900).url()}
+                  alt={module.heading}
+                />
+              )
             ) : undefined
           }
         />
       );
+    }
 
     case "ctaModule":
       return <CTASection heading={module.heading} body={module.body} cta={module.cta} />;
