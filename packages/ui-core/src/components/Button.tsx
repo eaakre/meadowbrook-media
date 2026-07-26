@@ -1,4 +1,8 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode,
+} from "react";
 import { cn } from "../lib/cn";
 
 export type ButtonVariant = "primary" | "secondary" | "ghost";
@@ -10,7 +14,7 @@ export const buttonVariantClasses: Record<ButtonVariant, string> = {
 };
 
 export const buttonBaseClasses =
-  "inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none";
+  "inline-flex items-center justify-center px-4 py-4 font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -25,7 +29,11 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={cn(buttonBaseClasses, buttonVariantClasses[variant], className)}
+      className={cn(
+        buttonBaseClasses,
+        buttonVariantClasses[variant],
+        className,
+      )}
       {...rest}
     >
       {children}
@@ -46,7 +54,11 @@ export function LinkButton({
 }: LinkButtonProps) {
   return (
     <a
-      className={cn(buttonBaseClasses, buttonVariantClasses[variant], className)}
+      className={cn(
+        buttonBaseClasses,
+        buttonVariantClasses[variant],
+        className,
+      )}
       {...rest}
     >
       {children}
