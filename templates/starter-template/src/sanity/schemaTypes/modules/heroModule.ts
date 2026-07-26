@@ -5,6 +5,19 @@ export const heroModule = defineType({
   title: "Hero",
   type: "object",
   fields: [
+    defineField({
+      name: "layout",
+      type: "string",
+      options: {
+        list: [
+          { title: "Full-bleed image", value: "fullBleed" },
+          { title: "Split (image beside text)", value: "split" },
+          { title: "Centered (no image)", value: "centered" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "fullBleed",
+    }),
     defineField({ name: "eyebrow", type: "string" }),
     defineField({ name: "heading", type: "string", validation: (r) => r.required() }),
     defineField({ name: "body", type: "text", rows: 3 }),

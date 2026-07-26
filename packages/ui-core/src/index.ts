@@ -18,7 +18,7 @@ export { SanityImage } from "./components/SanityImage";
 export type { SanityImageProps } from "./components/SanityImage";
 
 export { Hero } from "./components/Hero";
-export type { HeroProps, HeroLink } from "./components/Hero";
+export type { HeroProps, HeroLink, HeroLayout } from "./components/Hero";
 
 export { Card } from "./components/Card";
 export type { CardProps } from "./components/Card";
